@@ -1,9 +1,6 @@
 {
-  "name": "vercel-cms",
+  "name": "lambda-cms",
   "version": "0.0.0",
-  "scripts": {
-    "start": "next dev"
-  },
   "keywords": [],
   "author": "David Konsumer <konsumer@jetboystudio.com> (http://konsumer.js.org)",
   "license": "MIT",
