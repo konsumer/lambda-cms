@@ -41,9 +41,6 @@ import {
 import slugify from 'slugify'
 
 const {
-  Page,
-  Type,
-  Auth,
   ContentTypeMarkdown,
   TypeFrontmatterText,
   TypeFrontmatterDate,
@@ -54,11 +51,7 @@ const {
 
 export default {
   transport: TransportGitlab,
-  theme: {
-    page: Page,
-    type: Type,
-    auth: Auth
-  },
+  theme: ThemeRsuite,
   urls: {
     list: '/admin',
     edit: '/admin/edit'
