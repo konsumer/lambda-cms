@@ -25,7 +25,7 @@ export default class MyTransport {
 }
 ```
 
-This transport should be a complete set of functions to edit the source of your site, so somethign else can build it (like gatsby, nextjs, or whatever.)
+This transport should be a complete set of functions to edit the source of your site, so something else can build it (like gatsby, nextjs, or whatever.)
 
 You can also implement a theme, which exports react-element for `Page` (for all pages), `Type` (a single type form), `Auth` (content part of auth form), or any of the named field-types. There is a default theme that uses [rsuite](https://rsuitejs.com/).
 
