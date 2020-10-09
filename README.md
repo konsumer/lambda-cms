@@ -32,8 +32,8 @@ You can also implement a theme, which exports react-element for these:
 * `Page` for all pages
 * `Auth` a login form
 * `List` list content
-* `Preview` show a preview of the article
-* `Edit` assmeble a form to edit
+* `Preview` show a preview of the item
+* `Edit` assmeble a form to edit the item
 
 There is a default theme that uses [rsuite](https://rsuitejs.com/).
 
