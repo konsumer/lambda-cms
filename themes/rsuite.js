@@ -1,12 +1,19 @@
 import React from 'react'
 
-export const Page = () => (<div>Page</div>)
-export const Auth = () => (<div>Auth</div>)
-export const Type = () => (<div>Type</div>)
+// shared for all pages
+export const Page = ({ children }) => (<div>Page</div>)
 
-export const ContentTypeMarkdown = () => <div>ContentTypeMarkdown</div>
-export const TypeFrontmatterText = () => <div>TypeFrontmatterText</div>
-export const TypeFrontmatterDate = () => <div>TypeFrontmatterDate</div>
-export const TypeFrontmatterStringArray = () => <div>TypeFrontmatterStringArray</div>
-export const TypeMarkdownBody = () => <div>TypeMarkdownBody</div>
-export const PreviewMarkdown = () => <div>PreviewMarkdown</div>
+// show the authentication form                           
+export const Auth = ({ field }) => (<div>Auth</div>)
+
+// show the form for this type
+export const ContentTypeMarkdown = ({ type }) => <div>ContentTypeMarkdown</div>
+
+// some field-formatters
+export const TypeFrontmatterText = ({ field, value, onChange }) => <div>TypeFrontmatterText</div>
+export const TypeFrontmatterDate = ({ field, value, onChange }) => <div>TypeFrontmatterDate</div>
+export const TypeFrontmatterStringArray = ({ field, value, onChange }) => <div>TypeFrontmatterStringArray</div>
+export const TypeMarkdownBody = ({ field, value, onChange }) => <div>TypeMarkdownBody</div>
+
+// display the preview
+export const PreviewMarkdown = ({ content }) => <div>PreviewMarkdown</div>
