@@ -10,6 +10,7 @@ import PageEdit from './pages/edit'
 const context = createContext()
 const useVercelCMS = () => useContext(context)
 
+// context-provider
 const VercelCMS = ({ children, config }) => {
   const Transport = config.transport
   const value = { config, transport: new Transport(config) }
