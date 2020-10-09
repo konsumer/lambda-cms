@@ -30,8 +30,7 @@ You can also implement a theme, which exports react-element for `Page` (for all 
 To config, you should give it an object that looks like this:
 
 ```js
-import { TransportGitlab } from 'vercel-cms'
-import { ThemeRsuite } from 'vercel-cms'
+import { ThemeRsuite, TransportGitlab, TypeMarkdown } from 'vercel-cms'
 
 export default {
   transport: TransportGitlab,
@@ -45,6 +44,7 @@ export default {
     'post': {
       name: 'Post',
       pattern: 'content/posts/*.md',
+      type: TypeMarkdown,
       fields: [
         { name: 'title', label: 'Title', type: 'FrontmatterText' },
         { name: 'date', label: 'Date', default: () => Date.now(), type: 'FrontmatterDate' },
