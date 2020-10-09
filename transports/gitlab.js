@@ -3,7 +3,7 @@ export default class TransportGitlab {
     this.config = config
   }
 
-  // create a form to login as the user, config is from below
+  // output info for a form to login as the user
   async auth (config) {}
 
   // check if user is authorized

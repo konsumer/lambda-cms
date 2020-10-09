@@ -6,10 +6,10 @@ Each transport should implement a simple API that looks like this:
 
 ```js
 export default class MyTransport {
-  constructor (config: any) {}
+  constructor (config: Object) {}
 
-  // create a form to login as the user, config is from below
-  async auth(): JSX.Element {}
+  // output info for a form to login as the user
+  async auth(): Object {}
 
   // check if user is authorized
   async isAuth(): boolean {}
@@ -87,17 +87,19 @@ There are 2 pages that should match the config, that you need to make in your ap
 
 ```js
 // in your pages/admin.js
-export { PageList } from 'vercel-cms'
+export VercelCMS, { PageList } from 'vercel-cms'
 import config from './.cms.js' // or wherever you put config from above
-export default PageList(config)
+
+export default () => <VercelCMS config={config}><PageList /></VercelCMS>
 
 // in your pages/admin/edit.js
-export { PageEdit } from 'vercel-cms'
+export VercelCMS, { PageEdit } from 'vercel-cms'
 import config from './.cms.js' // or wherever you put config from above
-export default PageEdit(config)
+
+export default () => <VercelCMS config={config}><PageEdit /></VercelCMS>
 ```
 
-These will create an admin for you.
+These will create an admin for you. `<VercelCMS />` is a context-creator, so you can put it in the top-level of your admin app, however you do that.
 
 
 ### TODO
