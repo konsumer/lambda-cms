@@ -77,11 +77,15 @@ export default {
         { name: 'body', type: TypeMarkdownBody }
       ]
     }
-  }
+  },
+  
+  // extra config
+  project: 'konsumer/myproject', // for TransportGitlab
+  themeVariant: 'dark' // for ThemeRsuite
 }
 ```
 
-Instead of importing ours, you can use any of them as an example to make your own. You can add any other config, and it will passed to your transport and theme-components.
+The idea is that everything is overidable, and not really automatic, so you can mix & match it however you like. Instead of importing ours, you can use any of them as an example to make your own. You can add any other config, and it will passed to your transport and theme-components.
 
 There are 2 pages that should match the config, that you need to make in your app:
 
