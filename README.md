@@ -10,7 +10,7 @@ export default class MyTransport {
   async auth(handleSubmit: Function, config: any): JSX.Element {}
 
   // check if user is authorized
-  async isAuth(): boolean
+  async isAuth(): boolean {}
 
   // get a file from user's project
   async get(file: string) : string {}
