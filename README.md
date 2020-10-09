@@ -6,8 +6,8 @@ Each transport should implement a simple API that looks like this:
 
 ```js
 export default class MyTransport {
-  // create a form to login as the user, config is from config, below
-  async auth(handleSubmit: Function, config: any): JSX.Element {}
+  // create a form to login as the user, config is from below
+  async auth(config: any): JSX.Element {}
 
   // check if user is authorized
   async isAuth(): boolean {}
