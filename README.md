@@ -87,5 +87,6 @@ These will create an admin for you.
 
 * actually implement these ideas
 * make a basic set of widgets for a standard blog
+* make a dimple demo project
 * document theme, types, etc better
 * setup monorepo for all the sub-projects, so themes & transports can be more ala-carte
