@@ -30,7 +30,15 @@ You can also implement a theme, which exports react-element for `Page` (for all 
 To config, you should give it an object that looks like this:
 
 ```js
-import { ThemeRsuite, TransportGitlab, TypeMarkdown } from 'vercel-cms'
+import {
+  ThemeRsuite,
+  TransportGitlab,
+  ContentTypeMarkdown,
+  TypeFrontmatterText.
+  TypeFrontmatterDate,
+  TypeFrontmatterStringArray,
+  TypeMarkdownBody
+} from 'vercel-cms'
 
 export default {
   transport: TransportGitlab,
@@ -44,28 +52,31 @@ export default {
     'post': {
       name: 'Post',
       pattern: 'content/posts/*.md',
-      type: TypeMarkdown,
+      type: ContentTypeMarkdown,
       fields: [
-        { name: 'title', label: 'Title', type: 'FrontmatterText' },
-        { name: 'date', label: 'Date', default: () => Date.now(), type: 'FrontmatterDate' },
-        { name: 'tags', label: 'Tags', default: () => Date.now(), type: 'FrontmatterStringArray' },
-        { name: 'body', type: 'MarkdownBody' }
+        { name: 'title', label: 'Title', required: true, type: TypeFrontmatterText },
+        { name: 'date', label: 'Date', default: () => Date.now(), type: TypeFrontmatterDate },
+        { name: 'tags', label: 'Tags', type: TypeFrontmatterStringArray },
+        { name: 'body', type: TypeMarkdownBody }
       ]
     }
   }
 }
 ```
 
-Usage:
+Instead of importing ours, you can use any of them as an example of how to make your own.
+
+There are 2 pages that should match the config, that you need to make in your app:
 
 ```js
 // in your pages/admin.js
 export { PageList } from 'vercel-cms'
-import config from './.cms.js' // or wherever you put config
+import config from './.cms.js' // or wherever you put config from above
 export default PageList(config)
 
 // in your pages/admin/edit.js
 export { PageEdit } from 'vercel-cms'
+import config from './.cms.js' // or wherever you put config from above
 export default PageEdit(config)
 ```
 
@@ -75,6 +86,6 @@ These will create an admin for you.
 ### TODO
 
 * actually implement these ideas
-* make a basic set of widgets for a standard blog (`FrontmatterText`, `FrontmatterStringArray`, `FrontmatterDate`, `MarkdownBody`)
-* document theme better
+* make a basic set of widgets for a standard blog
+* document theme, types, etc better
 * setup monorepo for all the sub-projects, so themes & transports can be more ala-carte
