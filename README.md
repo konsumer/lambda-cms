@@ -45,7 +45,8 @@ const {
   TypeFrontmatterText,
   TypeFrontmatterDate,
   TypeFrontmatterStringArray,
-  TypeMarkdownBody
+  TypeMarkdownBody,
+  PreviewMarkdown
 } = ThemeRsuite
 
 export default {
@@ -65,6 +66,7 @@ export default {
       name: 'Post',
       pattern: 'content/posts/*.md',
       type: ContentTypeMarkdown,
+      preview: PreviewMarkdown,
       fields: [
         { name: 'title', label: 'Title', required: true, type: TypeFrontmatterText },
         { name: 'date', label: 'Date', default: field => Date.now(), type: TypeFrontmatterDate },

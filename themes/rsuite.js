@@ -9,3 +9,4 @@ export const TypeFrontmatterText = () => <div>TypeFrontmatterText</div>
 export const TypeFrontmatterDate = () => <div>TypeFrontmatterDate</div>
 export const TypeFrontmatterStringArray = () => <div>TypeFrontmatterStringArray</div>
 export const TypeMarkdownBody = () => <div>TypeMarkdownBody</div>
+export const PreviewMarkdown = () => <div>PreviewMarkdown</div>
