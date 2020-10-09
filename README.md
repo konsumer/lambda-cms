@@ -40,7 +40,7 @@ const {
   Type,
   Auth,
   ContentTypeMarkdown,
-  TypeFrontmatterText.
+  TypeFrontmatterText,
   TypeFrontmatterDate,
   TypeFrontmatterStringArray,
   TypeMarkdownBody
