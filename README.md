@@ -103,3 +103,4 @@ These will create an admin for you. `<VercelCMS />` is a context-provider, so yo
 * document theme, types, etc better
 * make a few simple demo projects that use different renderers
 * setup monorepo for all the sub-projects, so themes, transports, etc can be more ala-carte
+* make non-web (pure CLI, maybe) themes to show it's versatility
