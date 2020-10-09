@@ -99,7 +99,7 @@ import config from './.cms.js' // or wherever you put config from above
 export default () => <VercelCMS config={config}><PageEdit /></VercelCMS>
 ```
 
-These will create an admin for you. `<VercelCMS />` is a context-creator, so you can put it in the top-level of your admin app, however you do that.
+These will create an admin for you. `<VercelCMS />` is a context-provider, so you can put it in the top-level of your admin app, however you do that.
 
 
 ### TODO
