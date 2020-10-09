@@ -31,18 +31,28 @@ To config, you should give it an object that looks like this:
 
 ```js
 import {
-  ThemeRsuite,
   TransportGitlab,
+  ThemeRsuite
+} from 'vercel-cms'
+
+const {
+  Page,
+  Type,
+  Auth,
   ContentTypeMarkdown,
   TypeFrontmatterText.
   TypeFrontmatterDate,
   TypeFrontmatterStringArray,
   TypeMarkdownBody
-} from 'vercel-cms'
+} = ThemeRsuite
 
 export default {
   transport: TransportGitlab,
-  theme: ThemeRsuite,
+  theme: {
+    page: Page,
+    type: Type,
+    auth: Auth
+  },
   project: 'konsumer/myproject',
   urls: {
     list: '/admin',
@@ -55,7 +65,7 @@ export default {
       type: ContentTypeMarkdown,
       fields: [
         { name: 'title', label: 'Title', required: true, type: TypeFrontmatterText },
-        { name: 'date', label: 'Date', default: () => Date.now(), type: TypeFrontmatterDate },
+        { name: 'date', label: 'Date', default: field => Date.now(), type: TypeFrontmatterDate },
         { name: 'tags', label: 'Tags', type: TypeFrontmatterStringArray },
         { name: 'body', type: TypeMarkdownBody }
       ]
@@ -64,7 +74,7 @@ export default {
 }
 ```
 
-Instead of importing ours, you can use any of them as an example of how to make your own.
+Instead of importing ours, you can use any of them as an example to make your own.
 
 There are 2 pages that should match the config, that you need to make in your app:
 
@@ -89,4 +99,4 @@ These will create an admin for you.
 * make a basic set of widgets for a standard blog
 * make a simple demo project
 * document theme, types, etc better
-* setup monorepo for all the sub-projects, so themes & transports can be more ala-carte
+* setup monorepo for all the sub-projects, so themes, transports, etc can be more ala-carte
