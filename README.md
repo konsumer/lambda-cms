@@ -44,7 +44,7 @@ export default {
       pattern: 'content/posts/*.md',
       fields: [
         { name: 'title', label: 'Title', type: 'FrontmatterText' },
-        { name: 'date', label: 'Date', default: 'Date.now()', type: 'FrontmatterDate' },
+        { name: 'date', label: 'Date', default: () => Date.now(), type: 'FrontmatterDate' },
         { name: 'body', type: 'MarkdownBody' }
       ]
     }
