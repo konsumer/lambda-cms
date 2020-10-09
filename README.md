@@ -36,18 +36,17 @@ To config, you should give it an object that looks like this:
 ```js
 import {
   TransportGitlab,
-  ThemeRsuite
+  ThemeRsuite,
+  ContentTypeMarkdown
 } from 'vercel-cms'
 import slugify from 'slugify'
 
 const {
-  ContentTypeMarkdown,
   TypeFrontmatterText,
   TypeFrontmatterDate,
   TypeFrontmatterStringArray,
-  TypeMarkdownBody,
-  PreviewMarkdown
-} = ThemeRsuite
+  TypeMarkdownBody
+} = ContentTypeMarkdown
 
 export default {
   transport: TransportGitlab,
@@ -61,8 +60,6 @@ export default {
       name: 'Post',
       pattern: 'content/posts/*.md',
       filename: ({ date, title }) => `content/posts/${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}/${slugify(title)}.md`,
-      type: ContentTypeMarkdown,
-      preview: PreviewMarkdown,
       fields: [
         { name: 'title', label: 'Title', required: true, type: TypeFrontmatterText },
         { name: 'date', label: 'Date', default: field => Date.now(), type: TypeFrontmatterDate },

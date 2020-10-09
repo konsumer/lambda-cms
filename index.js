@@ -4,6 +4,7 @@ import React, { createContext, useContext } from 'rect'
 
 import TransportGitlab from './transport/gitlab'
 import * as ThemeRsuite from './themes/rsuite'
+import * as ContentTypeMarkdown from './types/markdown'
 import PageList from './pages/list'
 import PageEdit from './pages/edit'
 
@@ -19,5 +20,5 @@ const VercelCMS = ({ children, config }) => {
   )
 }
 
-export { TransportGitlab, ThemeRsuite, PageList, PageEdit, context, useVercelCMS, VercelCMS }
+export { TransportGitlab, ThemeRsuite, PageList, PageEdit, context, useVercelCMS, VercelCMS, ContentTypeMarkdown }
 export default VercelCMS
