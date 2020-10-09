@@ -1,4 +1,8 @@
 export default class TransportGitlab {
+  constructor (config) {
+    this.config = config
+  }
+
   // create a form to login as the user, config is from below
   async auth (config) {}
 
