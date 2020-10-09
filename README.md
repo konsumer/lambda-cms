@@ -1,6 +1,6 @@
 # WIP
 
-The idea is to provide a headless nextjs-based CMS that can be deployed on vercel or lambda.
+The idea is to provide a headless nextjs-based CMS that can be deployed on vercel or lambda to edit a static site.
 
 Each transport should implement a simple API that looks like this:
 
