@@ -25,6 +25,8 @@ export default class MyTransport {
 }
 ```
 
+This transport should be a complete set of functions to edit the source of your site, so somethign else can build it (like gatsby, nextjs, or whatever.)
+
 You can also implement a theme, which exports react-element for `Page` (for all pages), `Type` (a single type form), `Auth` (content part of auth form), or any of the named field-types. There is a default theme that uses [rsuite](https://rsuitejs.com/).
 
 ### config
@@ -36,6 +38,7 @@ import {
   TransportGitlab,
   ThemeRsuite
 } from 'vercel-cms'
+import slugify from 'slugify'
 
 const {
   Page,
@@ -64,6 +67,7 @@ export default {
     'post': {
       name: 'Post',
       pattern: 'content/posts/*.md',
+      filename: ({ date, title }) => `content/posts/${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}/${slugify(title)}.md`,
       type: ContentTypeMarkdown,
       preview: PreviewMarkdown,
       fields: [
@@ -100,6 +104,6 @@ These will create an admin for you.
 
 * actually implement these ideas
 * make a basic set of widgets for a standard blog
-* make a simple demo project
 * document theme, types, etc better
+* make a few simple demo projects that use different renderers
 * setup monorepo for all the sub-projects, so themes, transports, etc can be more ala-carte
