@@ -38,7 +38,7 @@ import {
   TransportGitlab,
   ThemeRsuite,
   ContentTypeMarkdown
-} from 'vercel-cms'
+} from 'lambda-cms'
 import slugify from 'slugify'
 
 const {
@@ -81,13 +81,13 @@ There are 2 pages that should match the config, that you need to make in your ap
 
 ```js
 // in your pages/admin.js
-export VercelCMS, { PageList } from 'vercel-cms'
+export VercelCMS, { PageList } from 'lambda-cms'
 import config from './.cms.js' // or wherever you put config from above
 
 export default () => <VercelCMS config={config}><PageList /></VercelCMS>
 
 // in your pages/admin/edit.js
-export VercelCMS, { PageEdit } from 'vercel-cms'
+export VercelCMS, { PageEdit } from 'lambda-cms'
 import config from './.cms.js' // or wherever you put config from above
 
 export default () => <VercelCMS config={config}><PageEdit /></VercelCMS>
