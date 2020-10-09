@@ -45,6 +45,7 @@ export default {
       fields: [
         { name: 'title', label: 'Title', type: 'FrontmatterText' },
         { name: 'date', label: 'Date', default: () => Date.now(), type: 'FrontmatterDate' },
+        { name: 'tags', label: 'Tags', default: () => Date.now(), type: 'FrontmatterStringArray' },
         { name: 'body', type: 'MarkdownBody' }
       ]
     }
@@ -71,4 +72,6 @@ These will create an admin for you.
 ### TODO
 
 * actually implement these ideas
+* make a basic set of widgets for a standard blog (`FrontmatterText`, `FrontmatterStringArray`, `FrontmatterDate`, `MarkdownBody`)
+* document theme better
 * setup monorepo for all the sub-projects, so themes & transports can be more ala-carte
